@@ -1,0 +1,23 @@
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/portada.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Estilos del Navbar */
+.navbar-transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Clase que se añade con JS al hacer scroll */
+.navbar-scrolled {
+    background-color: #212529; /* Color 'bg-dark' de Bootstrap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
