@@ -1,5 +1,5 @@
 .hero-section {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/portada.png);
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/portada.png);
     background-size: cover;
     background-position: center;
     height: 100vh; 
@@ -8,6 +8,10 @@
     justify-content: center;
     color: white;
     text-align: center;
+}
+
+h1{
+    font-size: 40px;
 }
 
 /* Estilos del Navbar */
