@@ -1,4 +1,8 @@
+/* =================================
+   1. HERO Y NAVBAR (PÁGINA PRINCIPAL)
+   ================================= */
 .hero-section {
+    /* Asegúrate que esta ruta sea correcta desde la raíz */
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/portada.png);
     background-size: cover;
     background-position: center;
@@ -10,18 +14,51 @@
     text-align: center;
 }
 
-h1{
-    font-size: 40px;
-}
-
-/* Estilos del Navbar */
 .navbar-transparent {
     background-color: transparent;
     transition: background-color 0.3s ease; /* Transición suave */
 }
 
-/* Clase que se añade con JS al hacer scroll */
 .navbar-scrolled {
     background-color: #212529; /* Color 'bg-dark' de Bootstrap */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.input-icon-wrapper-grey {
+    background-color: #f0f0f0 !important; /* Gris muy claro */
+    border-radius: 50% !important;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d !important; /* Icono gris */
+    border: 1px solid #e9ecef !important;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Campos de texto compactos */
+.form-field-compact .form-control {
+    font-size: 0.95rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem  ;
+    background: none !important;
+}
+
+/* Texto apilado de "Huéspedes" */
+.huespedes-label {
+    font-size: 0.8rem !important;
+    color: #6c757d !important; /* Negro */
+    line-height: 1 !important;
+}
+.huespedes-count {
+    font-weight: 500 !important;
+    color: #212529  !important; /* Negro */
+    line-height: 1.2 !important;
+}
+
+.navbar-brand img {
+    height: 100px !important;
+    width: 100% !important;
 }
