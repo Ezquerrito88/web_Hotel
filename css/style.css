@@ -62,3 +62,41 @@
     height: 100px !important;
     width: 100% !important;
 }
+
+/* Contenedor del formulario vertical */
+.mobile-search-form {
+    text-align: left !important;
+}
+
+/* Estilo de cada "caja" (Llegada, Salida, etc.) */
+.mobile-form-field {
+    padding: 0.8rem 1rem !important;
+}
+
+/* Etiqueta (Llegada, Huéspedes) */
+.mobile-form-field .field-label {
+    display: block !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: #212529 !important;
+}
+
+/* Valor (el input) */
+.mobile-form-field .field-value-input {
+    font-size: 0.9rem !important;
+    color: #6c757d !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Quitar flechas de los input[type=number] */
+.mobile-form-field .field-value-input[type=number] {
+    -moz-appearance: textfield  !important;
+}
+
+.mobile-form-field .field-value-input::-webkit-outer-spin-button,
+.mobile-form-field .field-value-input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}

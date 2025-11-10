@@ -50,59 +50,91 @@
         </nav>
     </header>
 
-    <section class="hero-section">
-    
-        <div class="hero-content text-center">
-            
-            <h1 class="display-2 fw-bold">Bienvenido al Hostal <br> Puente de Hierro</h1>
-            
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-11 col-xl-10">
+<section class="hero-section">
+    <div class="hero-content text-center">
+        
+        <h1 class="display-2 fw-bold">Bienvenido al Hostal <br> Puente de Hierro</h1>
+         
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-xl-10">
+                    
+                    <form class="d-none d-lg-flex flex-wrap p-2 rounded-pill bg-white shadow-lg justify-content-center align-items-center">
                         
-                        <form class="d-flex flex-wrap p-2 rounded-pill bg-white shadow-lg justify-content-center align-items-center">
+                        <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-geo-alt"></i></span>
+                                <input type="text" class="form-control border-0 ps-0" id="destino-pc" placeholder="Destino">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-calendar-date"></i></span>
+                                <input type="text" class="form-control border-0 ps-0" id="llegada-pc" placeholder="Llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-calendar-date"></i></span>
+                                <input type="text" class="form-control border-0 ps-0" id="salida-pc" placeholder="Salida" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-person"></i></span>
+                                <input type="number" class="form-control border-0 ps-0" id="huespedes-pc" value="1" min="1" placeholder="Huéspedes">
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-2 col-12 p-1">
+                            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2">
+                                Buscar
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="d-block d-lg-none p-4 bg-white shadow-lg rounded-3 mobile-search-form">
+                        
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <div class="mobile-form-field border-end border-bottom">
+                                    <label class="field-label">Llegada</label>
+                                    <input type="date" class="field-value-input" placeholder="¿Cuándo?">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mobile-form-field border-bottom">
+                                    <label class="field-label">Salida</label>
+                                    <input type="date" class="field-value-input" placeholder="¿Cuándo?">
+                                </div>
+                            </div>
                             
-                            <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-geo-alt"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="destino" placeholder="Destino">
+                            <div class="col-6">
+                                <div class="mobile-form-field border-end">
+                                    <label class="field-label">Huéspedes</label>
+                                    <input type="number" class="field-value-input" value="1" min="1">
                                 </div>
                             </div>
+                            <div class="col-6">
+                                <div class="mobile-form-field">
+                                    <label class="field-label">Destino</label>
+                                    <input type="text" class="field-value-input" value="Cualquier destino">
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-calendar-date"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="llegada" placeholder="Llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-calendar-date"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="salida" placeholder="Salida" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i class="bi bi-person"></i></span>
-                                    
-                                    <input type="number" class="form-control border-0 ps-0" id="huespedes" value="1" min="1" placeholder="Huéspedes">
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-2 col-12 p-1">
-                                <button type="submit" class="btn btn-dark mt-auto">
-                                    Buscar
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                        <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 mt-4">
+                            Buscar
+                        </button>
+                    </form> 
                 </div>
             </div>
-
-        </div> 
-    </section>
+        </div>
+    </div> 
+</section>
 
     <section class="container my-5" id="bienvenida">
         <div class="row align-items-center g-5">
