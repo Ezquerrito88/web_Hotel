@@ -92,7 +92,9 @@
 
 /* Quitar flechas de los input[type=number] */
 .mobile-form-field .field-value-input[type=number] {
-    -moz-appearance: textfield  !important;
+    -moz-appearance: none !important;      /* Firefox */
+    -webkit-appearance: none !important;   /* Safari/Chrome */
+    appearance: none !important;           /* Estándar */
 }
 
 .mobile-form-field .field-value-input::-webkit-outer-spin-button,
