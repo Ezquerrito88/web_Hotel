@@ -14,21 +14,64 @@
     <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8P7YQDH1C0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P7YQDH1C0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8P7YQDH1C0');
+    </script>
 
-  gtag('config', 'G-8P7YQDH1C0');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostal Puente de Hierro</title>
+    <meta name="description" content="Hostal Puente de Hierro en Logroño - Alojamiento cómodo en el centro histórico, ideal para peregrinos del Camino de Santiago y turistas">
+    <title>Hostal Puente de Hierro - Alojamiento en el Centro de Logroño</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Clase para ocultar elementos visualmente pero mantenerlos accesibles */
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Mejorar indicadores de foco para navegación por teclado */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus {
+            outline: 3px solid #0066cc !important;
+            outline-offset: 2px !important;
+        }
+
+        /* Skip link visible solo al recibir foco */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            z-index: 10000;
+            font-weight: bold;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,8 +79,13 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBLP5Z8B" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ✅ NUEVO: Skip navigation link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent" id="mainNavbar">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent" id="mainNavbar" 
+             aria-label="Navegación principal">
             <div class="container">
 
                 <a class="navbar-brand" href="index.html">
@@ -45,14 +93,14 @@
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                    aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navMenu">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="html/habitaciones.html">Habitaciones</a>
@@ -74,283 +122,380 @@
         </nav>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content text-center">
+    <!-- ✅ NUEVO: Agregado id y role para main content -->
+    <main id="main-content" tabindex="-1">
 
-            <h1 class="display-2 fw-bold">Bienvenido al Hostal <br> Puente de Hierro</h1>
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="hero-content text-center">
 
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-11 col-xl-10">
+                <h1 id="hero-heading" class="display-2 fw-bold">
+                    Bienvenido al Hostal <br> Puente de Hierro
+                </h1>
 
-                        <form
-                            class="d-none d-lg-flex flex-wrap p-2 rounded-pill bg-white shadow-lg justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11 col-xl-10">
 
-                            <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i
-                                            class="bi bi-geo-alt"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="destino-pc"
-                                        placeholder="Destino">
+                            <!-- ✅ CORREGIDO: Formulario desktop con labels -->
+                            <form class="d-none d-lg-flex flex-wrap p-2 rounded-pill bg-white shadow-lg justify-content-center align-items-center"
+                                  aria-label="Formulario de búsqueda de habitaciones">
+
+                                <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey">
+                                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                                            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                                        </span>
+                                        <!-- ✅ CORREGIDO: Añadido label oculto -->
+                                        <label for="destino-pc" class="visually-hidden">Destino del viaje</label>
+                                        <input type="text" 
+                                               class="form-control border-0 ps-0" 
+                                               id="destino-pc"
+                                               name="destino"
+                                               placeholder="Destino"
+                                               aria-label="Destino del viaje">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i
-                                            class="bi bi-calendar-date"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="llegada-pc"
-                                        placeholder="Llegada" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey">
+                                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                                            <i class="bi bi-calendar-date" aria-hidden="true"></i>
+                                        </span>
+                                        <!-- ✅ CORREGIDO: Añadido label oculto y cambiado a type="date" -->
+                                        <label for="llegada-pc" class="visually-hidden">Fecha de llegada</label>
+                                        <input type="date" 
+                                               class="form-control border-0 ps-0" 
+                                               id="llegada-pc"
+                                               name="llegada"
+                                               aria-label="Fecha de llegada"
+                                               required>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i
-                                            class="bi bi-calendar-date"></i></span>
-                                    <input type="text" class="form-control border-0 ps-0" id="salida-pc"
-                                        placeholder="Salida" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <div class="col-lg-2 col-md-6 col-6 py-2 px-1 form-field-compact">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey">
+                                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                                            <i class="bi bi-calendar-date" aria-hidden="true"></i>
+                                        </span>
+                                        <!-- ✅ CORREGIDO: Añadido label oculto y cambiado a type="date" -->
+                                        <label for="salida-pc" class="visually-hidden">Fecha de salida</label>
+                                        <input type="date" 
+                                               class="form-control border-0 ps-0" 
+                                               id="salida-pc"
+                                               name="salida"
+                                               aria-label="Fecha de salida"
+                                               required>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey"><i
-                                            class="bi bi-person"></i></span>
-                                    <input type="number" class="form-control border-0 ps-0" id="huespedes-pc" value="1"
-                                        min="1" placeholder="Huéspedes">
+                                <div class="col-lg-3 col-md-6 col-6 py-2 px-1 form-field-compact">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white border-0 text-muted input-icon-wrapper-grey">
+                                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                                            <i class="bi bi-person" aria-hidden="true"></i>
+                                        </span>
+                                        <!-- ✅ CORREGIDO: Añadido label oculto -->
+                                        <label for="huespedes-pc" class="visually-hidden">Número de huéspedes</label>
+                                        <input type="number" 
+                                               class="form-control border-0 ps-0" 
+                                               id="huespedes-pc" 
+                                               name="huespedes"
+                                               value="1"
+                                               min="1" 
+                                               max="10"
+                                               placeholder="Huéspedes"
+                                               aria-label="Número de huéspedes">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-2 col-12 p-1">
-                                <button type="submit" class="btn btn-dark w-100 rounded-pill py-2">
+                                <div class="col-lg-2 col-12 p-1">
+                                    <button type="submit" class="btn btn-dark w-100 rounded-pill py-2">
+                                        Buscar
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- ✅ CORREGIDO: Formulario móvil con labels -->
+                            <form class="d-block d-lg-none p-4 bg-white shadow-lg rounded-3 mobile-search-form"
+                                  aria-label="Formulario de búsqueda de habitaciones móvil">
+
+                                <div class="row g-0">
+                                    <div class="col-6">
+                                        <div class="mobile-form-field border-end border-bottom">
+                                            <!-- ✅ CORREGIDO: Label ahora está asociado correctamente -->
+                                            <label for="llegada-movil" class="field-label">Llegada</label>
+                                            <input type="date" 
+                                                   class="field-value-input" 
+                                                   id="llegada-movil"
+                                                   name="llegada-movil"
+                                                   placeholder="¿Cuándo?"
+                                                   required
+                                                   aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mobile-form-field border-bottom">
+                                            <!-- ✅ CORREGIDO: Label ahora está asociado correctamente -->
+                                            <label for="salida-movil" class="field-label">Salida</label>
+                                            <input type="date" 
+                                                   class="field-value-input" 
+                                                   id="salida-movil"
+                                                   name="salida-movil"
+                                                   placeholder="¿Cuándo?"
+                                                   required
+                                                   aria-required="true">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="mobile-form-field border-end">
+                                            <!-- ✅ CORREGIDO: Label ahora está asociado correctamente -->
+                                            <label for="huespedes-movil" class="field-label">Huéspedes</label>
+                                            <input type="number" 
+                                                   class="field-value-input" 
+                                                   id="huespedes-movil"
+                                                   name="huespedes-movil"
+                                                   value="1" 
+                                                   min="1"
+                                                   max="10">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mobile-form-field">
+                                            <!-- ✅ CORREGIDO: Label ahora está asociado correctamente -->
+                                            <label for="destino-movil" class="field-label">Destino</label>
+                                            <input type="text" 
+                                                   class="field-value-input" 
+                                                   id="destino-movil"
+                                                   name="destino-movil"
+                                                   value="Cualquier destino">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 mt-4">
                                     Buscar
                                 </button>
-                            </div>
-                        </form>
-
-                        <form class="d-block d-lg-none p-4 bg-white shadow-lg rounded-3 mobile-search-form">
-
-                            <div class="row g-0">
-                                <div class="col-6">
-                                    <div class="mobile-form-field border-end border-bottom">
-                                        <label class="field-label">Llegada</label>
-                                        <input type="date" class="field-value-input" placeholder="¿Cuándo?">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="mobile-form-field border-bottom">
-                                        <label class="field-label">Salida</label>
-                                        <input type="date" class="field-value-input" placeholder="¿Cuándo?">
-                                    </div>
-                                </div>
-
-                                <div class="col-6">
-                                    <div class="mobile-form-field border-end">
-                                        <label class="field-label">Huéspedes</label>
-                                        <input type="number" class="field-value-input" value="1" min="1">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="mobile-form-field">
-                                        <label class="field-label">Destino</label>
-                                        <input type="text" class="field-value-input" value="Cualquier destino">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 mt-4">
-                                Buscar
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container my-5" id="bienvenida">
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6">
-                <h2 class="display-5 fw-bold mb-3">
-                    Tu hostal en el centro de Logroño
-                </h2>
-                <p class="lead text-muted">
-                    Descubre la comodidad de alojarte en el corazón del casco histórico.
-                    El Hostal Puente de Hierro combina una ubicación inmejorable con un
-                    servicio pensado para el viajero moderno.
-                </p>
-                <p class="text-muted">
-                    Ideal para peregrinos que buscan confort o para turistas con ganas de
-                    explorar La Rioja, aquí encontrarás habitaciones impecables, un trato
-                    amable y la base perfecta para una estancia memorable. Simple, cómodo
-                    y céntrico.
-                </p>
-            </div>
-
-            <div class="col-lg-6">
-                <img src="img/reccepcion.png" class="img-fluid rounded shadow-sm"
-                    alt="Recepción del Hostal Puente de Hierro">
-            </div>
-
-        </div>
-    </section>
-
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Nuestros Servicios Destacados</h2>
-
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
-
-                <div class="col">
-                    <i class="bi bi-wifi display-4 text-dark"></i>
-                    <h4 class="mt-3">Wi-Fi de Alta Velocidad</h4>
-                    <p class="text-muted">Gratis en todas las habitaciones y zonas comunes.</p>
-                </div>
-
-                <div class="col">
-                    <i class="bi bi-geo-alt-fill display-4 text-dark"></i>
-                    <h4 class="mt-3">Ubicación Céntrica</h4>
-                    <p class="text-muted">En pleno centro histórico, al lado de todo.</p>
-                </div>
-
-                <div class="col">
-                    <i class="bi bi-thermometer-sun display-4 text-dark"></i>
-                    <h4 class="mt-3">Aire Acondicionado</h4>
-                    <p class="text-muted">Habitaciones climatizadas para tu confort.</p>
-                </div>
-
-                <div class="col">
-                    <i class="bi bi-person-check-fill display-4 text-dark"></i>
-                    <h4 class="mt-3">Atención Personalizada</h4>
-                    <p class="text-muted">Te ayudamos a planificar tu visita a La Rioja.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="container my-5" id="habitaciones">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold">Nuestras Habitaciones</h2>
-            <p class="lead text-muted">Espacios pensados para tu máximo confort y descanso.</p>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="img/habitaciones/Habitacion_Deluxe/cama_deluxe.png" class="card-img-top"
-                        alt="Habitación Deluxe">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Habitación Deluxe</h5>
-                        <p class="card-text text-muted small">
-                            2 huéspedes · 1 dormitorio · 1 baño
-                        </p>
-
-                        <div class="mb-3">
-                            <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
-                            <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
-                            <span class="badge bg-light text-dark border me-1 mb-1">Escritorio</span>
+                            </form>
                         </div>
-
-                        <a href="html/habitaciones/deluxe.html" class="btn btn-dark mt-auto">
-                            Ver detalles y precios
-                        </a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="img/habitaciones/habitacion_Doble/cama_doble.png" class="card-img-top"
-                        alt="Habitación Doble">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Habitación Doble Estándar</h5>
-                        <p class="card-text text-muted small">
-                            2 huéspedes · 1 dormitorio · 1 baño
-                        </p>
-                        <div class="mb-3">
-                            <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
-                            <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
-                        </div>
-                        <a href="html/habitaciones/estandar.html" class="btn btn-dark mt-auto">
-                            Ver detalles y precios
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="img/habitaciones/Habitacion_invididual/cama_invididual.png" class="card-img-top"
-                        alt="Habitación Individual">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Habitación Individual</h5>
-                        <p class="card-text text-muted small">
-                            1 huésped · 1 dormitorio · 1 baño
-                        </p>
-                        <div class="mb-3">
-                            <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
-                            <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
-                            <span class="badge bg-light text-dark border me-1 mb-1">Escritorio</span>
-                        </div>
-                        <a href="html/habitaciones/invididual.html" class="btn btn-dark mt-auto">
-                            Ver detalles y precios
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="text-center mt-5">
-            <a href="html/habitaciones.html" class="btn btn-outline-dark btn-lg">
-                Ver todas las habitaciones
-            </a>
-        </div>
-
-    </section>
-
-    <section class="bg-light py-5">
-        <div class="container">
+        <!-- ✅ CORREGIDO: Añadido section y aria-labelledby -->
+        <section class="container my-5" id="bienvenida" aria-labelledby="bienvenida-heading">
             <div class="row align-items-center g-5">
 
                 <div class="col-lg-6">
-                    <img src="img/camino-santiago.png" class="img-fluid rounded shadow-sm"
-                        alt="Peregrino en el Camino de Santiago cerca de Logroño">
+                    <!-- ✅ CORREGIDO: h2 con id para aria-labelledby -->
+                    <h2 id="bienvenida-heading" class="display-5 fw-bold mb-3">
+                        Tu hostal en el centro de Logroño
+                    </h2>
+                    <p class="lead text-muted">
+                        Descubre la comodidad de alojarte en el corazón del casco histórico.
+                        El Hostal Puente de Hierro combina una ubicación inmejorable con un
+                        servicio pensado para el viajero moderno.
+                    </p>
+                    <p class="text-muted">
+                        Ideal para peregrinos que buscan confort o para turistas con ganas de
+                        explorar La Rioja, aquí encontrarás habitaciones impecables, un trato
+                        amable y la base perfecta para una estancia memorable. Simple, cómodo
+                        y céntrico.
+                    </p>
                 </div>
 
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-3">
-                        Tu Descanso en el Camino
-                    </h2>
-                    <p class="lead text-muted">
-                        El Hostal Puente de Hierro es una parada estratégica para los peregrinos
-                        que recorren el Camino de Santiago a su paso por Logroño.
-                    </p>
-                    <p class="text-muted">
-                        Ofrecemos el confort y los servicios que necesitas para reponer
-                        fuerzas: un lugar seguro para tu mochila, una ducha reconfortante
-                        y una cama cómoda en pleno centro histórico. Estás a un paso de
-                        continuar tu viaje.
-                    </p>
+                    <!-- ✅ CORREGIDO: Añadido alt descriptivo -->
+                    <img src="img/reccepcion.png" 
+                         class="img-fluid rounded shadow-sm"
+                         alt="Recepción del Hostal Puente de Hierro con mostrador de madera y decoración moderna">
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ✅ CORREGIDO: Añadido section y aria-labelledby -->
+        <section class="bg-light py-5" aria-labelledby="servicios-heading">
+            <div class="container">
+                <h2 id="servicios-heading" class="text-center mb-5 fw-bold">
+                    Nuestros Servicios Destacados
+                </h2>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
+
+                    <div class="col">
+                        <!-- ✅ CORREGIDO: Icono con aria-hidden y texto alternativo -->
+                        <i class="bi bi-wifi display-4 text-dark" aria-hidden="true"></i>
+                        <span class="visually-hidden">Icono de WiFi</span>
+                        <h3 class="mt-3 h5">Wi-Fi de Alta Velocidad</h3>
+                        <p class="text-muted">Gratis en todas las habitaciones y zonas comunes.</p>
+                    </div>
+
+                    <div class="col">
+                        <!-- ✅ CORREGIDO: Icono con aria-hidden y texto alternativo -->
+                        <i class="bi bi-geo-alt-fill display-4 text-dark" aria-hidden="true"></i>
+                        <span class="visually-hidden">Icono de ubicación</span>
+                        <h3 class="mt-3 h5">Ubicación Céntrica</h3>
+                        <p class="text-muted">En pleno centro histórico, al lado de todo.</p>
+                    </div>
+
+                    <div class="col">
+                        <!-- ✅ CORREGIDO: Icono con aria-hidden y texto alternativo -->
+                        <i class="bi bi-thermometer-sun display-4 text-dark" aria-hidden="true"></i>
+                        <span class="visually-hidden">Icono de climatización</span>
+                        <h3 class="mt-3 h5">Aire Acondicionado</h3>
+                        <p class="text-muted">Habitaciones climatizadas para tu confort.</p>
+                    </div>
+
+                    <div class="col">
+                        <!-- ✅ CORREGIDO: Icono con aria-hidden y texto alternativo -->
+                        <i class="bi bi-person-check-fill display-4 text-dark" aria-hidden="true"></i>
+                        <span class="visually-hidden">Icono de atención personalizada</span>
+                        <h3 class="mt-3 h5">Atención Personalizada</h3>
+                        <p class="text-muted">Te ayudamos a planificar tu visita a La Rioja.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ✅ CORREGIDO: Añadido section y aria-labelledby, h3 para habitaciones -->
+        <section class="container my-5" id="habitaciones" aria-labelledby="habitaciones-heading">
+            <div class="text-center mb-5">
+                <h2 id="habitaciones-heading" class="display-5 fw-bold">
+                    Nuestras Habitaciones
+                </h2>
+                <p class="lead text-muted">
+                    Espacios pensados para tu máximo confort y descanso.
+                </p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- ✅ CORREGIDO: Cada habitación es un article con h3 -->
+                <div class="col">
+                    <article class="card h-100 shadow-sm border-0">
+                        <!-- ✅ CORREGIDO: Alt text descriptivo -->
+                        <img src="img/habitaciones/Habitacion_Deluxe/cama_deluxe.png" 
+                             class="card-img-top"
+                             alt="Habitación Deluxe con cama doble king size, escritorio y ventana grande">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Habitación Deluxe</h3>
+                            <p class="card-text text-muted small">
+                                2 huéspedes · 1 dormitorio · 1 baño
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
+                                <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
+                                <span class="badge bg-light text-dark border me-1 mb-1">Escritorio</span>
+                            </div>
+
+                            <a href="html/habitaciones/deluxe.html" class="btn btn-dark mt-auto">
+                                Ver detalles y precios
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm border-0">
+                        <!-- ✅ CORREGIDO: Alt text descriptivo -->
+                        <img src="img/habitaciones/habitacion_Doble/cama_doble.png" 
+                             class="card-img-top"
+                             alt="Habitación Doble Estándar con cama de matrimonio y baño privado">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Habitación Doble Estándar</h3>
+                            <p class="card-text text-muted small">
+                                2 huéspedes · 1 dormitorio · 1 baño
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
+                                <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
+                            </div>
+                            <a href="html/habitaciones/estandar.html" class="btn btn-dark mt-auto">
+                                Ver detalles y precios
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm border-0">
+                        <!-- ✅ CORREGIDO: Alt text descriptivo -->
+                        <img src="img/habitaciones/Habitacion_invididual/cama_invididual.png" 
+                             class="card-img-top"
+                             alt="Habitación Individual con cama simple, escritorio y armario">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Habitación Individual</h3>
+                            <p class="card-text text-muted small">
+                                1 huésped · 1 dormitorio · 1 baño
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark border me-1 mb-1">Wi-Fi gratis</span>
+                                <span class="badge bg-light text-dark border me-1 mb-1">Aire acondicionado</span>
+                                <span class="badge bg-light text-dark border me-1 mb-1">Escritorio</span>
+                            </div>
+                            <a href="html/habitaciones/invididual.html" class="btn btn-dark mt-auto">
+                                Ver detalles y precios
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div class="text-center mt-5">
+                <a href="html/habitaciones.html" class="btn btn-outline-dark btn-lg">
+                    Ver todas las habitaciones
+                </a>
+            </div>
+
+        </section>
+
+        <!-- ✅ CORREGIDO: Añadido section y aria-labelledby -->
+        <section class="bg-light py-5" aria-labelledby="camino-heading">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+                        <!-- ✅ CORREGIDO: Alt text descriptivo -->
+                        <img src="img/camino-santiago.png" 
+                             class="img-fluid rounded shadow-sm"
+                             alt="Peregrino caminando por el Camino de Santiago con mochila y bastón cerca de Logroño">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h2 id="camino-heading" class="display-5 fw-bold mb-3">
+                            Tu Descanso en el Camino
+                        </h2>
+                        <p class="lead text-muted">
+                            El Hostal Puente de Hierro es una parada estratégica para los peregrinos
+                            que recorren el Camino de Santiago a su paso por Logroño.
+                        </p>
+                        <p class="text-muted">
+                            Ofrecemos el confort y los servicios que necesitas para reponer
+                            fuerzas: un lugar seguro para tu mochila, una ducha reconfortante
+                            y una cama cómoda en pleno centro histórico. Estás a un paso de
+                            continuar tu viaje.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="bg-dark text-white">
         <div class="container py-5">
             <div class="row gy-4">
 
                 <div class="col-lg-3 col-md-6">
-                    <a class="navbar-brand text-white fs-4 fw-bold" href="#">
+                    <a class="navbar-brand text-white fs-4 fw-bold" href="index.html">
                         Hostal Puente de Hierro
                     </a>
                     <p class="text-white-50 mt-2 small">
@@ -359,45 +504,55 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Secciones</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-white-50">Inicio</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#habitaciones" class="nav-link p-0 text-white-50">Habitaciones</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-white-50">Galería</a>
-                        </li>
-                    </ul>
+                    <h2 class="h5 mb-3">Secciones</h2>
+                    <nav aria-label="Enlaces del sitio">
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a href="index.html" class="nav-link p-0 text-white-50">Inicio</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="html/habitaciones.html" class="nav-link p-0 text-white-50">Habitaciones</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="html/galeria.html" class="nav-link p-0 text-white-50">Galería</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Legal</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-white-50">Política de Privacidad</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-white-50">Política de Cookies</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-white-50">Términos y condiciones</a>
-                        </li>
-                    </ul>
+                    <h2 class="h5 mb-3">Legal</h2>
+                    <nav aria-label="Enlaces legales">
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a href="#" class="nav-link p-0 text-white-50">Política de Privacidad</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="#" class="nav-link p-0 text-white-50">Política de Cookies</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="#" class="nav-link p-0 text-white-50">Términos y condiciones</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Contacto</h5>
-                    <p class="text-white-50 small mb-2">
-                        <i class="bi bi-geo-alt-fill me-2"></i>
-                        C. Carnicerías, 26001 Logroño
-                    </p>
-                    <p class="text-white-50 small mb-2">
-                        <i class="bi bi-envelope-fill me-2"></i>
-                        pensionpuentedehierro@gmail.com
-                    </p>
+                    <h2 class="h5 mb-3">Contacto</h2>
+                    <address class="text-white-50 small">
+                        <p class="mb-2">
+                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                            <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>
+                            C. Carnicerías, 26001 Logroño
+                        </p>
+                        <p class="mb-2">
+                            <!-- ✅ CORREGIDO: Icono con aria-hidden -->
+                            <i class="bi bi-envelope-fill me-2" aria-hidden="true"></i>
+                            <a href="mailto:pensionpuentedehierro@gmail.com" class="text-white-50 text-decoration-none">
+                                pensionpuentedehierro@gmail.com
+                            </a>
+                        </p>
+                    </address>
                 </div>
 
             </div>
@@ -413,11 +568,20 @@
                 </div>
 
                 <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                    <a href="#" class="text-white-50 me-3 fs-5">
-                        <i class="bi bi-instagram"></i>
+                    <!-- ✅ CORREGIDO: Enlaces con aria-label descriptivo -->
+                    <a href="https://instagram.com/hostalpuentedehierro" 
+                       class="text-white-50 me-3 fs-5"
+                       aria-label="Síguenos en Instagram"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="text-white-50 me-3 fs-5">
-                        <i class="bi bi-facebook"></i>
+                    <a href="https://facebook.com/hostalpuentedehierro" 
+                       class="text-white-50 me-3 fs-5"
+                       aria-label="Síguenos en Facebook"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -428,22 +592,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script type="text/javascript">
-        // Selecciona el navbar
+        // Navbar scroll effect
         const nav = document.getElementById('mainNavbar');
 
-        // Escucha el evento de 'scroll' en la ventana
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                // Si el scroll es mayor a 50px, añade la clase 'navbar-scrolled'
                 nav.classList.add('navbar-scrolled');
                 nav.classList.remove('navbar-transparent');
             } else {
-                // Si está arriba, quita la clase
                 nav.classList.remove('navbar-scrolled');
                 nav.classList.add('navbar-transparent');
             }
         });
 
+        // Clarity Analytics
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
             t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
